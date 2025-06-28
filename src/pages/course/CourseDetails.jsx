@@ -2,7 +2,7 @@ import React from "react";
 import { FaCalendarAlt, FaClock, FaMapMarkerAlt ,FaBookOpen, FaHeart, FaStar} from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-export default function EventDetailsPage() {
+export default function courseDetails() {
   return (
     <div className="bg-gray-50 min-h-screen py-12 px-4 sm:px-6 lg:px-8">
       {/* Header */}

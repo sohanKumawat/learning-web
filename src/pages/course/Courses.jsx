@@ -1,7 +1,6 @@
 import React from "react";
-import Courses from "./CourseDetails";
 import { Link } from "react-router-dom";
-import { FaCalendarAlt, FaClock, FaMapMarkerAlt ,FaBookOpen, FaHeart, FaStar} from "react-icons/fa";
+import {FaClock,FaBookOpen, FaHeart, FaStar} from "react-icons/fa";
 
 const courses = [
   {
@@ -50,7 +49,7 @@ const courses = [
     tagColor: "bg-red-600",
   },
   {
-    id: 3,
+    id: 4,
     category: "Development1",
     image: "https://picsum.photos/400/250?random=1",
     lessons: 25,
@@ -72,7 +71,7 @@ export default function CoursesPage() {
     <div className="bg-gray-50 min-h-screen p-8">
       {/* Header */}
       <div className="text-center mb-8">
-        <h1 className="text-3xl font-bold mb-2">Featured Courses</h1>
+        <h1 className="text-3xl font-bold mb-2">Comming Courses</h1>
       </div>
 
       <div className="flex gap-8">
@@ -157,7 +156,7 @@ export default function CoursesPage() {
           {/* Grid */}
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {courses.map((course) => (
-    <Link to={`/courses/${course.id}`} key={course.id}>
+    <Link to={`/course/${course.id}`} key={course.id}>
       <div className="bg-white border rounded shadow-sm overflow-hidden relative hover:shadow-md transition">
         <img
           src={course.image}
