@@ -11,302 +11,223 @@ import {
 const Home = () => {
   return (
     <div className="font-sans">
-      {/* ========== SECTION 1 ========== */}
-      <section className="bg-white py-16 px-4">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left content */}
+      {/* ========== HERO SECTION ========== */}
+      <section className="bg-white py-20 px-4">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 items-center">
           <div>
             <span className="text-xs uppercase text-purple-600 font-semibold bg-purple-50 rounded px-2 py-1 inline-block">
-              Education
+              Learn Anything
             </span>
-            <h1 className="text-4xl lg:text-5xl font-extrabold mt-4 mb-6 leading-tight">
-              Cloud-based LMS <br /> Trusted by 1000+
+            <h1 className="text-4xl lg:text-5xl font-extrabold mt-4 mb-6">
+              Explore Top{" "}
+              <span className="text-purple-600">Online Courses</span> Anytime,
+              Anywhere
             </h1>
             <p className="text-gray-600 mb-6">
-              Lorem Ipsum is simply dummy text of the printing typesetting
-              industry. Lorem Ipsum has been
+              Join thousands of learners mastering new skills across tech,
+              business, design, and more.
             </p>
-            <div className="flex max-w-sm">
+            <div className="flex max-w-md">
               <input
                 type="email"
-                placeholder="Your email address"
+                placeholder="Enter your email"
                 className="border border-gray-300 rounded-l px-4 py-3 w-full focus:outline-none"
               />
               <button className="bg-purple-600 text-white px-6 rounded-r hover:bg-purple-700">
-                Sign Up
+                Join Free
               </button>
             </div>
           </div>
-
-          {/* Right content */}
           <div className="flex justify-center relative">
             <img
-              src="https://images.unsplash.com/photo-1614283626809-7c73ff892cbd?ixlib=rb-4.0.3&auto=format&fit=crop&w=700&q=80"
-              alt=""
+              src="https://html.themewin.com/edurcok-preview-tailwind/edurock/assets/images/about/about_10.png"
+              alt="Online Learning"
               className="rounded-xl w-80 h-80 object-cover"
             />
-            <div className="absolute -bottom-6 left-12 bg-white shadow-lg rounded p-3 text-sm flex gap-3 items-center">
+            <div className="absolute -bottom-6 left-12 bg-white shadow rounded p-3 text-sm flex gap-3 items-center">
               <img
-                src="https://images.unsplash.com/photo-1614283626809-7c73ff892cbd?ixlib=rb-4.0.3&auto=format&fit=crop&w=50&q=80"
-                alt=""
+                src="https://html.themewin.com/edurcok-preview-tailwind/edurock/assets/images/about/about_12.png"
+                alt="Student"
                 className="w-10 h-10 rounded-full object-cover"
               />
               <div>
-                <p className="text-gray-800 font-semibold">Congratulations!!</p>
-                <p className="text-gray-500">Your Admission Completed</p>
+                <p className="text-gray-800 font-semibold">Welcome aboard!</p>
+                <p className="text-gray-500">New learner just signed up</p>
               </div>
             </div>
           </div>
         </div>
+      </section>
 
-        {/* Features */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-          <div className="flex flex-col items-center text-center border p-6 rounded-lg">
-            <FaPlay className="text-purple-600 text-3xl mb-4" />
-            <h3 className="font-bold mb-2">Video Training</h3>
-            <p className="text-gray-500 text-sm">With unlimited courses</p>
-          </div>
-          <div className="flex flex-col items-center text-center border p-6 rounded-lg">
-            <FaLock className="text-purple-600 text-3xl mb-4" />
-            <h3 className="font-bold mb-2">Expert Teacher</h3>
-            <p className="text-gray-500 text-sm">With unlimited courses</p>
-          </div>
-          <div className="flex flex-col items-center text-center border p-6 rounded-lg">
-            <FaFileAlt className="text-purple-600 text-3xl mb-4" />
-            <h3 className="font-bold mb-2">Versatile Course</h3>
-            <p className="text-gray-500 text-sm">With unlimited courses</p>
-          </div>
-        </div>
-
-        {/* Welcome section */}
-        <div className="grid lg:grid-cols-2 gap-16 mt-16 items-center">
-          <div className="flex justify-center">
-            <img
-              src="https://images.unsplash.com/photo-1573496799515-6c2e3b0e8c64?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-              alt=""
-              className="rounded-xl w-80 h-auto"
-            />
-          </div>
-          <div>
-            <span className="text-xs uppercase text-purple-600 font-semibold bg-purple-50 rounded px-2 py-1 inline-block">
-              About Us
-            </span>
-            <h2 className="text-3xl font-bold mt-4 mb-6">
-              Welcome to the <span className="underline decoration-pink-500">Online</span> Learning Center
-            </h2>
-            <p className="text-gray-500 mb-6">
-              Forging relationships between multi to national Governments and
-              global NGOs begins.
-            </p>
-            <ul className="text-gray-700 space-y-2">
-              <li>✓ Explore a variety of fresh educational teach</li>
-              <li>✓ Explore a variety of fresh educational teach</li>
-              <li>✓ Explore a variety of fresh educational teach</li>
-            </ul>
-            <button className="mt-6 bg-purple-600 text-white px-5 py-3 rounded hover:bg-purple-700">
-              More About →
-            </button>
-          </div>
-        </div>
-
-        {/* Subjects */}
-        <div className="mt-16">
-          <div className="flex justify-between items-center mb-8">
-            <div>
-              <span className="text-xs uppercase text-purple-600 font-semibold bg-purple-50 rounded px-2 py-1 inline-block">
-                Course List
-              </span>
-              <h3 className="text-2xl font-bold mt-3">
-                Populer <span className="underline decoration-pink-500">Subjects</span>
-              </h3>
-            </div>
-            <button className="bg-pink-500 text-white px-5 py-2 rounded text-sm">
-              All Categories →
-            </button>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+      {/* ========== LEARNING PATH SECTION ========== */}
+      <section className="bg-gray-50 py-14 px-4">
+        <div className="max-w-7xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-8">
+            360° Education Platform for{" "}
+            <span className="text-purple-600">Learning Path</span>
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {[
-              "Business Studies",
-              "Programming Tech",
-              "Artist & Design",
-              "Machine Learning",
-              "Health & Fitness",
-              "Marketing Analysis",
-            ].map((subject) => (
-              <div
-                key={subject}
-                className="border rounded-lg p-4 text-center hover:shadow-lg transition"
-              >
-                <h4 className="font-bold text-gray-700 mb-1">{subject}</h4>
-                <p className="text-gray-400 text-sm">Business is success</p>
+              {
+                title: "Academic Learning",
+                desc: "Courses tailored for school and college students across various subjects and boards.",
+                icon: "🎓",
+              },
+              {
+                title: "Professional Growth",
+                desc: "Certifications, skill training, and mentorship by domain experts.",
+                icon: "💼",
+              },
+              {
+                title: "Beginner Friendly",
+                desc: "Step-by-step foundational learning for beginners exploring new fields.",
+                icon: "👶",
+              },
+            ].map((item, i) => (
+              <div key={i} className="bg-white p-6 rounded shadow text-center">
+                <div className="text-4xl mb-4">{item.icon}</div>
+                <h4 className="font-bold text-lg mb-2">{item.title}</h4>
+                <p className="text-gray-600 text-sm">{item.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* SEPARATOR */}
-      <hr className="border-t border-gray-200 my-12" />
-
-      {/* ========== SECTION 2 ========== */}
-      <section className="bg-gray-50 py-16 px-4">
+      {/* ========== TRENDING COURSES SECTION ========== */}
+      <section className="py-14 px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-10">
-            <span className="text-xs uppercase text-purple-600 font-semibold bg-purple-50 rounded px-2 py-1 inline-block">
-              Course List
-            </span>
-            <h2 className="text-3xl font-bold mt-4">
-              Perfect Online <span className="underline decoration-pink-500">Course</span> <br />
-              Your Career
-            </h2>
+          <h2 className="text-center text-3xl font-bold mb-6">
+            Trending <span className="text-purple-600">Courses</span>
+          </h2>
+          <div className="flex overflow-x-auto space-x-2 pb-4">
+            {[...Array(8)].map((_, i) => (
+              <div
+                key={i}
+                className="min-w-[250px] border rounded p-3 bg-white shadow-sm flex-shrink-0"
+              >
+                <img
+                  src="https://html.themewin.com/edurcok-preview-tailwind/edurock/assets/images/grid/grid_4.png"
+                  alt="Course"
+                  className="w-full h-32 object-cover rounded"
+                />
+                <h4 className="font-bold mt-3 mb-1 text-sm">
+                  Course Title {i + 1}
+                </h4>
+                <p className="text-xs text-gray-500">Data & Tech</p>
+              </div>
+            ))}
           </div>
+        </div>
+      </section>
 
-          {/* Tabs */}
-          <div className="flex flex-wrap justify-center gap-3 mb-10">
-            {["All", "Computer Science", "Data science", "Engineering", "Web Development", "Architecture"].map(
-              (cat) => (
-                <button
-                  key={cat}
-                  className="border border-purple-600 text-purple-600 px-4 py-2 rounded text-sm hover:bg-purple-600 hover:text-white"
-                >
-                  {cat}
-                </button>
-              )
-            )}
-          </div>
-
-          {/* Course Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {/* ========== INSTRUCTORS SECTION ========== */}
+      <section className="py-14 px-4 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-center text-3xl font-bold mb-6">
+            Top <span className="text-purple-600">Instructors</span>
+          </h2>
+          <div className="flex overflow-x-auto space-x-2 pb-4">
             {[...Array(6)].map((_, i) => (
               <div
                 key={i}
-                className="bg-white border rounded overflow-hidden hover:shadow-lg transition"
+                className="min-w-[250px] bg-white p-4 rounded shadow-sm flex-shrink-0"
               >
                 <img
-                  src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                  alt=""
-                  className="w-full h-40 object-cover"
+                  src="https://html.themewin.com/edurcok-preview-tailwind/edurock/assets/images/team/team__1.png"
+                  alt="Instructor"
+                  className="w-16 h-16 rounded-full mb-2"
                 />
-                <div className="p-4">
-                  <span className="inline-block bg-pink-500 text-white text-xs px-2 py-1 rounded">
-                    Data & Tech
-                  </span>
-                  <h4 className="font-bold text-gray-800 mt-2 mb-2 text-sm">
-                    Foundation course to understand about software
-                  </h4>
-                  <div className="flex justify-between text-xs text-gray-500 mb-2">
-                    <span className="flex gap-1 items-center">
-                      <FaBookOpen /> 23 Lesson
-                    </span>
-                    <span className="flex gap-1 items-center">
-                      <FaClock /> 1 hr 30 min
-                    </span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-purple-600 font-bold">$32.00</span>
-                    <span className="flex items-center text-yellow-500">
-                      <FaStar className="w-4 h-4" /> 4.5
-                    </span>
-                  </div>
-                </div>
+                <h4 className="font-bold text-sm">Instructor {i + 1}</h4>
+                <p className="text-xs text-gray-500">
+                  UI/UX Design • Intermediate
+                </p>
+                <div className="text-yellow-500 text-xs mt-1">★★★★★</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* SEPARATOR */}
-      <hr className="border-t border-gray-200 my-12" />
-
-      {/* ========== SECTION 3 ========== */}
-      <section className="bg-white py-16 px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <span className="text-xs uppercase text-purple-600 font-semibold bg-purple-50 rounded px-2 py-1 inline-block">
-              Event List
+      {/* ========== REGISTRATION SECTION ========== */}
+      <section className="bg-purple-700 text-white py-16 px-4">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+          <div>
+            <span className="inline-block bg-white text-purple-700 text-sm px-3 py-1 rounded-full font-semibold mb-4">
+              Registration
             </span>
-            <h2 className="text-3xl font-bold mt-4">
-              We Arrange <span className="underline decoration-pink-500">learning</span> Event for students
-            </h2>
+            <h3 className="text-3xl font-bold mb-4">Register Your Account</h3>
+            <p className="mb-4 text-lg">Get access to 60,000+ online courses</p>
+            <p className="text-sm">
+              Learn something new & build your career from anywhere in the world
+            </p>
           </div>
-
-          {/* Tabs */}
-          <div className="flex justify-center gap-4 mb-8">
-            {["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"].map((day) => (
-              <button
-                key={day}
-                className="border border-purple-600 text-purple-600 px-4 py-2 rounded hover:bg-purple-600 hover:text-white text-sm"
-              >
-                {day}
-              </button>
-            ))}
-          </div>
-
-          {/* Event List */}
-          <div className="space-y-6">
-            {[...Array(3)].map((_, i) => (
-              <div
-                key={i}
-                className="flex flex-col md:flex-row items-center gap-6 border p-6 rounded shadow"
-              >
-                <img
-                  src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                  alt=""
-                  className="w-32 h-32 rounded-full object-cover"
+          <div className="bg-white text-gray-800 p-6 rounded-lg">
+            <h4 className="text-xl font-bold mb-4">Fill Your Registration</h4>
+            <form className="space-y-3">
+              <input
+                className="w-full border p-2 rounded"
+                type="text"
+                placeholder="Your Name"
+              />
+              <div className="flex gap-3">
+                <input
+                  className="w-1/2 border p-2 rounded"
+                  type="email"
+                  placeholder="Email"
                 />
-                <div className="flex-1">
-                  <h4 className="font-semibold text-lg mb-2">
-                    Forging relationships between multi to national governments
-                    and global.
-                  </h4>
-                  <p className="text-gray-500 text-sm mb-2">
-                    10.00am - 11.00 am ·{" "}
-                    <span className="text-purple-600">Mirnsdo JH</span> - Event
-                    Speaker
-                  </p>
-                  <button className="text-purple-600 text-sm hover:underline">
-                    Read More →
-                  </button>
-                </div>
+                <input
+                  className="w-1/2 border p-2 rounded"
+                  type="tel"
+                  placeholder="Phone"
+                />
               </div>
-            ))}
+              <input
+                className="w-full border p-2 rounded"
+                type="text"
+                placeholder="Address"
+              />
+              <textarea
+                className="w-full border p-2 rounded"
+                placeholder="Comment"
+                rows={3}
+              ></textarea>
+              <button className="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700">
+                Sign Up →
+              </button>
+            </form>
           </div>
+        </div>
+      </section>
 
-          {/* Testimonials */}
-          <div className="mt-16 text-center">
-            <span className="text-xs uppercase text-purple-600 font-semibold bg-purple-50 rounded px-2 py-1 inline-block">
-              Course List
-            </span>
-            <h3 className="text-3xl font-bold mt-4">
-              Client <span className="underline decoration-pink-500">Testimonial</span>
-            </h3>
-          </div>
-          <div className="grid md:grid-cols-2 gap-6 mt-10">
-            {[...Array(2)].map((_, i) => (
+      {/* ========== TESTIMONIAL SECTION ========== */}
+      <section className="py-14 px-4">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-center text-3xl font-bold mb-6">
+            What <span className="text-purple-600">Learners Say</span>
+          </h2>
+          <div className="flex overflow-x-auto space-x-2 pb-4">
+            {[...Array(5)].map((_, i) => (
               <div
                 key={i}
-                className="border p-6 rounded shadow hover:shadow-lg transition"
+                className="min-w-[300px] border rounded p-4 bg-white flex-shrink-0"
               >
-                <div className="flex items-center gap-4 mb-4">
+                <div className="flex gap-4 mb-2">
                   <img
-                    src="https://images.unsplash.com/photo-1590080877631-1a7c4ba5ab02?ixlib=rb-4.0.3&auto=format&fit=crop&w=50&q=80"
-                    alt=""
-                    className="w-12 h-12 rounded-full object-cover"
+                    src="https://html.themewin.com/edurcok-preview-tailwind/edurock/assets/images/testimonial/testi_2.png"
+                    alt="User"
+                    className="rounded-full w-12 h-12"
                   />
                   <div>
-                    <p className="font-bold text-gray-700">Mirnsdo Jons</p>
-                    <p className="text-sm text-gray-500">UI/UX Designer</p>
+                    <p className="font-bold text-sm">User {i + 1}</p>
+                    <p className="text-xs text-gray-500">B.Tech • Full Stack</p>
                   </div>
                 </div>
-                <p className="text-gray-500 mb-4 text-sm">
-                  The other hand we denounce with righteous indignation men who
-                  are so beguiled and demoralized.
+                <p className="text-gray-600 text-sm mb-2">
+                  The platform helped me upskill quickly and efficiently.
+                  Instructors were top-notch.
                 </p>
-                <span className="text-yellow-500 flex items-center gap-1">
-                  {[...Array(5)].map((_, j) => (
-                    <FaStar key={j} />
-                  ))}
-                </span>
+                <div className="text-yellow-500 text-xs">★★★★★</div>
               </div>
             ))}
           </div>

@@ -1,14 +1,16 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./pages/HeaderBar";
+import Footer from "./pages/Footer";
 import Home from "./pages/Home";
 import Courses from "./pages/course/Courses";
 import CourseDetails from "./pages/course/CourseDetails";
 import Instructor from "./pages/instructor/Instructor";
 import InstructorDetails from "./pages/instructor/InstructorDetails";
-import Learner from "./pages/learner/LearnerPage";
+import Participants from "./pages/participant/Participants";
 import Contacts from "./pages/Contacts";
 import Signup from "./pages/Signup";
+import InstructorCourseReg from "./pages/instructor/InstructorCourseReg";
 
 function App() {
   return (
@@ -19,18 +21,20 @@ function App() {
         <Route path="/course" element={<Courses />} />
         <Route path="/instructor" element={<Instructor />} />
         <Route path="/instructor/:id" element={<InstructorDetails />} />
-        <Route path="/learner" element={<Learner />} />
+        <Route path="/participant" element={<Participants />} />
         <Route path="/contact" element={<Contacts />} />
         <Route path="/signup" element={<Signup />} />
-       <Route path="/course/:id" element={<CourseDetails />} />
-        
+        <Route path="/course/:id" element={<CourseDetails />} />
+        <Route
+          path="/instructor/:id/create-course"
+          element={<InstructorCourseReg />}
+        />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
-
 }
 export default App;
-
 
 // function App() {
 //   return (
