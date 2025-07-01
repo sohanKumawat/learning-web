@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
   FaChevronDown,
@@ -19,11 +19,13 @@ const HeaderBar = () => {
   const [courseOpen, setCourseOpen] = useState(false);
   const [instructorOpen, setInstructorOpen] = useState(false);
   const [accountOpen, setAccountOpen] = useState(false);
+  const [callbackOpen, setCallbackOpen] = useState(false);
 
-  let locationTimeout = useRef();
-  let courseTimeout = useRef();
-  let instructorTimeout = useRef();
-  let accountTimeout = useRef();
+  const locationTimeout = useRef();
+  const courseTimeout = useRef();
+  const instructorTimeout = useRef();
+  const accountTimeout = useRef();
+  const callBtnRef = useRef(null);
 
   const cities = [
     "New Delhi",
@@ -68,8 +70,7 @@ const HeaderBar = () => {
     "Digital Marketing": ["Priya Mehra", "Dev Singh"],
     "Business Analytics": ["Sneha Shah", "Rahul Iyer"],
   };
-  const [callbackOpen, setCallbackOpen] = useState(false);
-  const callBtnRef = useRef(null); // <-- to anchor popup
+
   const handleSelectLocation = (city) => {
     setSelectedLocation(city);
     setLocationOpen(false);
@@ -88,7 +89,6 @@ const HeaderBar = () => {
     <>
       <header className="sticky top-0 z-50 bg-white shadow">
         <div className="max-w-7xl mx-auto flex justify-between items-center px-2 py-3">
-          {/* Left Section */}
           <div className="flex items-center space-x-4 relative">
             <Link to="/" className="flex items-center space-x-2 pl-[2px]">
               <img
@@ -100,7 +100,6 @@ const HeaderBar = () => {
                 Smart <span className="text-purple-600">Learning</span>
               </span>
             </Link>
-
             <div
               onMouseEnter={() =>
                 handleMouseEnter(setLocationOpen, locationTimeout)
@@ -133,12 +132,10 @@ const HeaderBar = () => {
             </div>
           </div>
 
-          {/* Center Navigation */}
           <nav className="flex items-center space-x-6 text-sm font-medium text-gray-700">
             <Link to="/" className="hover:text-purple-600">
               Home
             </Link>
-
             <div
               onMouseEnter={() =>
                 handleMouseEnter(setCourseOpen, courseTimeout)
@@ -244,7 +241,6 @@ const HeaderBar = () => {
             </Link>
           </nav>
 
-          {/* Right - Contact & Account */}
           <div className="flex items-center space-x-4 pr-2 relative">
             <button
               ref={callBtnRef}
@@ -254,11 +250,8 @@ const HeaderBar = () => {
               <FaPhoneAlt className="text-xs" />
               <span className="text-sm">Call us</span>
             </button>
-
             <div className="h-6 w-px bg-gray-300 mx-2" />
-
             <FaHeart className="text-lg text-black" />
-
             <div
               onMouseEnter={() =>
                 handleMouseEnter(setAccountOpen, accountTimeout)
@@ -307,7 +300,7 @@ const HeaderBar = () => {
           </div>
         </div>
       </header>
-      {/* Callback popup */}
+
       {callbackOpen && (
         <CallbackPopup
           onClose={() => setCallbackOpen(false)}
@@ -321,17 +314,32 @@ const HeaderBar = () => {
 export default HeaderBar;
 
 const CallbackPopup = ({ onClose, anchorRef }) => {
-  const rect = anchorRef?.current?.getBoundingClientRect();
+  const [popupStyle, setPopupStyle] = useState({});
+
+  useEffect(() => {
+    const updatePosition = () => {
+      const rect = anchorRef?.current?.getBoundingClientRect();
+      if (rect) {
+        setPopupStyle({
+          position: "absolute",
+          top: rect.bottom + window.scrollY + 10,
+          left: rect.left + window.scrollX + rect.width / 2,
+          transform: "translateX(-50%)",
+          width: "90%",
+          maxWidth: "400px",
+        });
+      }
+    };
+    updatePosition();
+    window.addEventListener("resize", updatePosition);
+    return () => window.removeEventListener("resize", updatePosition);
+  }, [anchorRef]);
 
   return (
     <div className="fixed inset-0 z-50" onClick={onClose}>
       <div
-        className="absolute bg-white w-1/2 max-w-md rounded shadow-lg p-6 border border-gray-200"
-        style={{
-          top: rect ? rect.bottom + window.scrollY + 8 : "50%",
-          left: rect ? rect.left + window.scrollX : "50%",
-          transform: rect ? "translateX(0)" : "translate(-50%, -50%)",
-        }}
+        className="bg-white rounded shadow-lg p-6 border border-gray-200"
+        style={popupStyle}
         onClick={(e) => e.stopPropagation()}
       >
         <button
@@ -344,7 +352,6 @@ const CallbackPopup = ({ onClose, anchorRef }) => {
           Request call back
         </h2>
         <hr className="mb-4" />
-
         <div className="mb-4">
           <label className="block text-sm font-semibold text-gray-800 mb-1">
             Phone Number
@@ -354,7 +361,6 @@ const CallbackPopup = ({ onClose, anchorRef }) => {
             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none"
           />
         </div>
-
         <div className="mb-4">
           <label className="block text-sm font-semibold text-gray-800 mb-1">
             Language
@@ -365,7 +371,6 @@ const CallbackPopup = ({ onClose, anchorRef }) => {
             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none"
           />
         </div>
-
         <div className="mb-4">
           <textarea
             rows={3}
@@ -373,7 +378,6 @@ const CallbackPopup = ({ onClose, anchorRef }) => {
             className="w-full px-3 py-2 border border-gray-300 rounded-md text-gray-700 focus:outline-none"
           ></textarea>
         </div>
-
         <p className="text-sm text-gray-500 mb-1 text-center">
           To have a <strong>SmartLearning</strong> representative call you,
           please click below
@@ -381,7 +385,6 @@ const CallbackPopup = ({ onClose, anchorRef }) => {
         <p className="text-sm text-orange-500 font-semibold text-center mb-4">
           We are operational between 9 AM - 9 PM
         </p>
-
         <button
           onClick={onClose}
           className="w-full bg-gray-300 text-white py-3 rounded font-semibold text-sm"
