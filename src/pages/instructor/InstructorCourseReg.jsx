@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -126,7 +125,9 @@ const InstructorCourseRegistration = () => {
             </div>
 
             <div>
-              <label className="block text-gray-700 mb-1">Course Category</label>
+              <label className="block text-gray-700 mb-1">
+                Course Category
+              </label>
               <select
                 name="category"
                 value={courseInfo.category}
@@ -286,10 +287,7 @@ const InstructorCourseRegistration = () => {
             </button>
 
             {curriculum.map((topic, tIndex) => (
-              <div
-                key={topic.id}
-                className="border p-4 rounded mb-4 bg-white"
-              >
+              <div key={topic.id} className="border p-4 rounded mb-4 bg-white">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                   <input
                     placeholder="Lecture Name"
@@ -509,18 +507,8 @@ const InstructorCourseRegistration = () => {
           </div>
         )}
       </div>
-
-      {/* Example navigation to instructor page */}
-      <Link
-        to={`/instructor/123`}
-        key={123}
-        className="text-purple-600 hover:underline text-sm"
-      >
-        Go to Instructor Profile
-      </Link>
     </div>
   );
 };
 
 export default InstructorCourseRegistration;
-

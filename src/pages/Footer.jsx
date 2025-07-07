@@ -84,7 +84,7 @@ const Footer = () => {
         <div className="flex justify-between items-center flex-col md:flex-row max-w-7xl mx-auto gap-4 px-2">
           <p>
             Copyright ©{" "}
-            <span className="text-purple-500 font-semibold">2024</span> by
+            <span className="text-purple-500 font-semibold">2025</span> by
             SmartLearning. All Rights Reserved.
           </p>
           <div className="flex gap-3 text-white text-lg">

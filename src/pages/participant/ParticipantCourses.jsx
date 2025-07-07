@@ -1,7 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-const InstructorCourses = () => {
-  const [activeTab, setActiveTab] = useState("PUBLISH");
+const ParticipantCourses = ({ defaultSection }) => {
+  const [activeTab, setActiveTab] = useState(defaultSection || "ENRROLED");
+
+  useEffect(() => {
+    if (defaultSection) {
+      setActiveTab(defaultSection);
+    }
+  }, [defaultSection]);
 
   const courses = [
     {
@@ -18,7 +24,7 @@ const InstructorCourses = () => {
       instructor: "Rinis Jhon",
       rating: 4,
       reviews: 44,
-      status: "PUBLISH",
+      status: "IN-PROGRESS",
     },
     {
       id: 2,
@@ -34,7 +40,7 @@ const InstructorCourses = () => {
       instructor: "Micle John",
       rating: 5,
       reviews: 44,
-      status: "PENDING",
+      status: "ENRROLED",
     },
     {
       id: 3,
@@ -50,11 +56,43 @@ const InstructorCourses = () => {
       instructor: "Micle Robin",
       rating: 5,
       reviews: 44,
-      status: "PUBLISH",
+      status: "IN-PROGRESS",
+    },
+    {
+      id: 4,
+      category: "UI & UX Design",
+      image:
+        "https://images.pexels.com/photos/3771069/pexels-photo-3771069.jpeg",
+      lessons: 36,
+      duration: "3 hr 40 min",
+      title: "Design course to under stand about solution",
+      price: "$40.00",
+      oldPrice: "$67.00",
+      free: true,
+      instructor: "Micle Robin",
+      rating: 5,
+      reviews: 44,
+      status: "IN-PROGRESS",
+    },
+    {
+      id: 5,
+      category: "UI & UX Design",
+      image:
+        "https://images.pexels.com/photos/3771069/pexels-photo-3771069.jpeg",
+      lessons: 36,
+      duration: "3 hr 40 min",
+      title: "Design course to under stand about solution",
+      price: "$40.00",
+      oldPrice: "$67.00",
+      free: true,
+      instructor: "Micle Robin",
+      rating: 5,
+      reviews: 44,
+      status: "COMPLETED",
     },
   ];
 
-  const tabs = ["PUBLISH", "PENDING", "DRAFT"];
+  const tabs = ["IN-PROGRESS", "ENRROLED", "COMPLETED", "NEW ENROLMENT"];
 
   const filteredCourses = courses.filter(
     (course) => course.status === activeTab
@@ -165,16 +203,6 @@ const InstructorCourses = () => {
                     </div>
                   </div>
                 </div>
-
-                {/* Buttons */}
-                <div className="flex gap-2 mt-auto">
-                  <button
-                    className="flex-1 text-sm text-white bg-purple-600 hover:bg-purple-700 py-2 px-3 rounded"
-                    onClick={() => alert(`Editing course: ${course.title}`)}
-                  >
-                    Edit
-                  </button>
-                </div>
               </div>
             </div>
           ))}
@@ -186,4 +214,4 @@ const InstructorCourses = () => {
   );
 };
 
-export default InstructorCourses;
+export default ParticipantCourses;

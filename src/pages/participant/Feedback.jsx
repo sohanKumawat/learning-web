@@ -54,13 +54,12 @@ const dummyReviews = {
   ],
 };
 
-export default function ReviewsPage() {
+export default function Feedback() {
   const [activeTab, setActiveTab] = useState("received");
   const [reviews, setReviews] = useState(dummyReviews);
 
   const handleAddFeedback = () => {
-    const newId =
-      Math.max(...reviews.given.map((r) => r.id)) + 1 || 1;
+    const newId = Math.max(...reviews.given.map((r) => r.id)) + 1 || 1;
     const newReview = {
       id: newId,
       student: "",
@@ -185,9 +184,7 @@ export default function ReviewsPage() {
                     </span>
                   )}
                 </td>
-                <td className="px-6 py-4 text-gray-600">
-                  {review.date}
-                </td>
+                <td className="px-6 py-4 text-gray-600">{review.date}</td>
                 <td className="px-6 py-4">
                   {activeTab === "given" && review.isEditing ? (
                     <input

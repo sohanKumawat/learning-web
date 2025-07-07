@@ -8,25 +8,55 @@ import {
   FaCreditCard,
 } from "react-icons/fa";
 
-const InstructorSidebar = ({ activePage, setActivePage }) => {
+const ParticipantSidebar = ({
+  activePage,
+  setActivePage,
+  setSelectedSection,
+}) => {
   const menuItems = [
-    { id: "dashboard", label: "Dashboard", icon: <FaTachometerAlt /> },
-    { id: "profile", label: "My Profile", icon: <FaUser /> },
-    { id: "courses", label: "My Course", icon: <FaBook /> },
     {
-      id: "courseReg",
-      label: "Add New Course",
-      icon: <FaExchangeAlt />,
+      id: "dashboard",
+      label: "Dashboard",
+      section: "",
+      icon: <FaTachometerAlt />,
+    },
+    {
+      id: "profile",
+      label: "My Profile",
+      section: "",
+      icon: <FaUser />,
+    },
+    {
+      id: "courses",
+      label: "My Course",
+      section: "IN-PROGRESS",
+      icon: <FaBook />,
     },
     {
       id: "conversion",
       label: "Conversion",
+      section: "",
       icon: <FaExchangeAlt />,
       badge: "9+",
     },
-    { id: "feedbacks", label: "Participatns Feedbacks", icon: <FaStar /> },
-    { id: "payment", label: "Payment History", icon: <FaCreditCard /> },
-    { id: "chatgpt", label: "Chat GPT Conversation", icon: <FaCreditCard /> },
+    {
+      id: "feedbacks",
+      label: "Participatns Feedbacks",
+      section: "",
+      icon: <FaStar />,
+    },
+    {
+      id: "payment",
+      label: "Payment History",
+      section: "",
+      icon: <FaCreditCard />,
+    },
+    {
+      id: "chatgpt",
+      label: "ChatGPT History",
+      section: "",
+      icon: <FaCreditCard />,
+    },
   ];
   return (
     <aside className="w-64 bg-white border-r h-full overflow-y-auto">
@@ -34,7 +64,10 @@ const InstructorSidebar = ({ activePage, setActivePage }) => {
         {menuItems.map((item) => (
           <button
             key={item.id}
-            onClick={() => setActivePage(item.id)}
+            onClick={() => {
+              setSelectedSection(item.section);
+              setActivePage(item.id);
+            }}
             className={`w-full flex items-center justify-between px-4 py-2 text-left ${
               activePage === item.id
                 ? "text-purple-700 bg-purple-100 font-semibold"
@@ -57,4 +90,4 @@ const InstructorSidebar = ({ activePage, setActivePage }) => {
   );
 };
 
-export default InstructorSidebar;
+export default ParticipantSidebar;
